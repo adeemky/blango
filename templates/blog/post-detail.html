@@ -14,7 +14,7 @@
         {{ post.content|safe }}
     </div>
 </div>
-
+{% include "blog/post-comments.html" %}
 <div class="row">
     <div class="col">
         {% recent_posts post %}
