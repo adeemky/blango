@@ -69,6 +69,10 @@ class Dev(Configuration):
 
   AUTH_USER_MODEL = "blango_auth.User"
 
+  EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+  ACCOUNT_ACTIVATION_DAYS = 7
+
   INTERNAL_IPS = ["192.168.10.226"]
 
   ROOT_URLCONF = 'blango.urls'
