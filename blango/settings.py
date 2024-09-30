@@ -60,6 +60,7 @@ class Dev(Configuration):
       'allauth.socialaccount',
       'allauth.socialaccount.providers.google',
       'rest_framework',
+      'rest_framework.authtoken',
   ]
 
   MIDDLEWARE = [
@@ -172,6 +173,14 @@ class Dev(Configuration):
   CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
   CRISPY_TEMPLATE_PACK = "bootstrap5"
 
+  REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+      "rest_framework.authentication.BasicAuthentication",
+      "rest_framework.authentication.SessionAuthentication",
+      "rest_framework.authentication.TokenAuthentication",
+    ]
+  }
+
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
@@ -210,6 +219,8 @@ LOGGING = {
         "level": "DEBUG",
     },
     }
+
+  
 
 
 class Prod(Dev):
